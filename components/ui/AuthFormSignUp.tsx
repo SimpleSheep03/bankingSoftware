@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { getLoggedInUser, signUp } from '@/lib/actions/user.actions'
+import PlaidLink from './PlaidLink'
 
 
 const AuthFormSignUp = () => {
@@ -85,8 +86,9 @@ const AuthFormSignUp = () => {
         </header>
         {user ? (
         <div className="flex flex-col gap-4">
-          {/* <PlaidLink user={user} variant="primary" /> */}
-        </div>) : (
+           <PlaidLink user={user} variant="primary" /> 
+        </div> 
+        ) : ( 
           <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group mt-5 form-item">
             <label className = 'form-label' htmlFor="firstName">First Name:</label>
@@ -216,7 +218,7 @@ const AuthFormSignUp = () => {
           </button>
         </form>
         
-        )}
+         )} 
         <footer className="flex justify-center gap-1">
             <p className="text-14 font-normal text-gray-600">
               {"Already have an account?"}
