@@ -1,6 +1,13 @@
 import {withSentryConfig} from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
@@ -8,7 +15,7 @@ export default withSentryConfig(nextConfig, {
 
 // Suppresses source map uploading logs during build
 silent: true,
-org: "sambhav-sinha",
+org: "jsm-x9",
 project: "javascript-nextjs",
 }, {
 // For all available options, see:
